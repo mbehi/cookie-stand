@@ -30,15 +30,36 @@
 // seattle.render();
 
 let myContainer = document.getElementById('container');
+
 let cookieTable = document.getElementById('cookieTable');
+let tableHeader = document.getElementById('tableHeader');
+let tableBody = document.getElementById('tableBody');
+let tableFooter = document.getElementById('tableFooter');
+let totalCookieStands = [];
+
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-let seattleList = document.getElementById('Seattle');
-let tokyoList = document.getElementById('Tokyo');
-let dubaiList = document.getElementById('Dubai');
-let parisList = document.getElementById('Paris');
-let limaList = document.getElementById('Lima');
+// let seattleList = document.getElementById('Seattle');
+// let tokyoList = document.getElementById('Tokyo');
+// let dubaiList = document.getElementById('Dubai');
+// let parisList = document.getElementById('Paris');
+// let limaList = document.getElementById('Lima');
+
+
+// Constructor
+function CookieStand(storeName, minCust, maxCust, avg) {
+  this.storeName = storeName;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avg = avg;
+  this.cookiePerHourArray = [];
+  this.dailyTotal = 0;
+  totalCookieStands.push(this);
+}
+
+
+
 
 // object literal - Seattle
 let seattle = {
