@@ -29,23 +29,18 @@
 
 // seattle.render();
 
+//Global Variables
 let myContainer = document.getElementById('container');
-
 let cookieTable = document.getElementById('cookieTable');
 let tableHeader = document.getElementById('tableHeader');
 let tableBody = document.getElementById('tableBody');
 let tableFooter = document.getElementById('tableFooter');
 let totalCookieStands = [];
 
+//Submission Form - Sale Page
+let myForm = document.getElementById('container');
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-
-// let seattleList = document.getElementById('Seattle');
-// let tokyoList = document.getElementById('Tokyo');
-// let dubaiList = document.getElementById('Dubai');
-// let parisList = document.getElementById('Paris');
-// let limaList = document.getElementById('Lima');
-
 
 // Constructor
 function CookieStand(storeName, minCust, maxCust, avg) {
@@ -57,9 +52,6 @@ function CookieStand(storeName, minCust, maxCust, avg) {
   this.dailyTotal = 0;
   totalCookieStands.push(this);
 }
-
-
-
 
 // object literal - Seattle
 let seattle = {
@@ -226,3 +218,38 @@ tokyo.render();
 dubai.render;
 paris.render;
 lima.render();
+
+
+CookieStand.prototype.randomCustomersPerHour = function () {
+  return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+};
+
+CookieStand.prototype.calcCookiesPerHour = function () {
+  for(let i=0; i < hours.length; i++) {
+    let randomCust = this.randomCustomersPerHour();
+    let hourlyTotal = Math.floor(randomCust * this.avg);
+    this.cookiePerHourArray.push(hourlyTotal);
+    this.dailyTotal += hourlyTotal;
+  }
+};
+
+CookieStand.prototype.render = function() {
+  this.calcCookiesPerHour();
+  let tr = document.createElement('tr');
+  tableBody.appendChild(tr);
+
+  let th = document.createElement('th');
+  th.textContent = this.storeName;
+  tr.appendChild(th);
+
+  for(let i=0; i < this.calcCookiesPerHour.length; i++) {
+    let td = document.createElement('td');
+    td.textContent = this.cookiePerHourArray[i];
+    tr.appendChild(td);
+  }
+  let td = document.createElement('td');
+  td.textContent = this.dailyTotal;
+  tr.appendChild(td);
+};
+
+function
