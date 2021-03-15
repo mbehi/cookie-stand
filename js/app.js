@@ -29,8 +29,8 @@
 
 // seattle.render();
 
+//Global Variables
 let myContainer = document.getElementById('container');
-
 let cookieTable = document.getElementById('cookieTable');
 let tableHeader = document.getElementById('tableHeader');
 let tableBody = document.getElementById('tableBody');
