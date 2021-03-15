@@ -11,7 +11,34 @@
       <h1>Salmon Cookies Shopping Center</h1>
     </header>
 
+  <nav>
+    <ul>
+      <img src="" id="">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sales.html">Sales</a></li>
+    </ul>
+  </nav>
     <main>
+      <form>
+        <fieldset>
+          <legend>Add Store Location</legend>
+          <label>Store Name
+            <input type="text" name="locationname" required="required">
+          </label>
+          <label>
+          <label>Minimum Customer
+            <input type="number" name="minimumcustomer" min="0" required="required">
+          </label>
+          <label>Maximum Customer
+            <input type="number" name="maximumcustomer" min="0" required="required">
+          </label> 
+          <label>Average Cookie Sales
+            <input type="number" name="averagecookiesale" min="0" required="required">
+          </label> 
+            <button type="submit">Send</button>
+          </fieldset>
+      </form>
+
       <table>
         <thead id="tableHeader"></thead>
         <tbody id="tableBody"></tbody>
