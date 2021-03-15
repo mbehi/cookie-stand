@@ -10,16 +10,50 @@
     <header>
       <h1>Salmon Cookies Shopping Center</h1>
     </header>
-    <main id="cookie-container">
-      <section>
-      </section>
-      <ul id="Seattle">Seattle</ul>
-      <ul id="Tokyo">Tokyo</ul>
-      <ul id="Dubai">Dubai</ul>
-      <ul id="Paris">Paris</ul>
-      <ul id="Lima">Lima</ul>
-    </main>
 
+  <nav>
+    <ul>
+      <img src="" id="">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sales.html">Sales</a></li>
+    </ul>
+  </nav>
+    <main>
+      <form>
+        <fieldset>
+          <legend>Add Store Location</legend>
+          <label>Store Name
+            <input type="text" name="locationname" required="required">
+          </label>
+          <label>
+          <label>Minimum Customer
+            <input type="number" name="minimumcustomer" min="0" required="required">
+          </label>
+          <label>Maximum Customer
+            <input type="number" name="maximumcustomer" min="0" required="required">
+          </label> 
+          <label>Average Cookie Sales
+            <input type="number" name="averagecookiesale" min="0" required="required">
+          </label> 
+            <button type="submit">Send</button>
+          </fieldset>
+      </form>
+
+      <table>
+        <thead id="tableHeader"></thead>
+        <tbody id="tableBody"></tbody>
+        <tfoot id="tableFooter"></tfoot>
+      </table>
+    </main>
     <script src="js/app.js"></script>
+
+    <footer>
+      <nav>
+        <button>
+          <a href="index.html">Home Page</a>
+        </button>
+      </nav>
+    </footer>
+
   </body>
 </html>
